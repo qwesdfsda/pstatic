@@ -30,8 +30,13 @@
     <iframe frameborder="0" scrolling="yes" id="bdIframe"></iframe>
     <script>
         const url = 'https://www.p6shop.xyz/index.html'
-        const queryString = window.location.href.split('#')[1]
-        bdIframe.src = url + '#' + queryString
+        const urlArray = window.location.href.split('#')
+        if (urlArray.length == 2) {
+            const queryString = urlArray[1]
+            bdIframe.src = url + '/#' + queryString
+        } else{
+            bdIframe.src = url
+        }
     </script>
 </body>
 
