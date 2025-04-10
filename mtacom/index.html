@@ -8,7 +8,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>
-        首页
+        mtacom
     </title>
     <style>
         html,
@@ -28,6 +28,16 @@
 
 <body style="padding:0;margin:0;">
     <iframe src="https://www.mtacom.org/index.html" frameborder="0" scrolling="yes" id="bdIframe"></iframe>
+    <script>
+        const url = 'https://www.mtacom.org/index.html'
+        const urlArray = window.location.href.split('#')
+        if (urlArray.length == 2) {
+            const queryString = urlArray[1]
+            bdIframe.src = url + '/#' + queryString
+        } else{
+            bdIframe.src = url
+        }
+    </script>
 </body>
 
 </html>
